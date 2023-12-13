@@ -1,0 +1,16 @@
+function missingNumber(nums) {
+  const n = nums.length;
+  // Calculate the sum of numbers from 0 to n using the formula: sum = n * (n + 1) / 2
+  const expectedSum = (n * (n + 1)) / 2;
+  
+  // Calculate the sum of numbers in the given array
+  const actualSum = nums.reduce((acc, curr) => acc + curr, 0);
+  
+  // The missing number is the difference between the expected sum and the actual sum
+  return expectedSum - actualSum;
+}
+
+// Test cases
+console.log(missingNumber([3, 0, 1])); // Output: 2
+console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])); // Output: 8
+console.log(missingNumber([0, 1])); // Output: 2
